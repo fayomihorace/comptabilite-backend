@@ -70,29 +70,6 @@ class DayBilanMutation(graphene.Mutation):
         month      = graphene.String()
         year       = graphene.Int()
         
-"""
-    def mutate(self, info, day, month, year, money_in, money_out):
-        
-        exist = Record.objects.filter(product_id=product_id, day=day, month=month, year=year)
-        if( len(exist)==0 ):
-            record = Record(
-                product_id = product_id,
-                day        = day,
-                month      = month,
-                year       = year,
-                stock_in   = stock_in,
-                stock_out  = stock_out,
-                buy_price  = buy_price,
-                sell_price = sell_price,
-            )
-            record.save()
 
-            return RecordMutation(record=record)
-        else:
-            record=exist[0]
-            record.stock_in=stock_in
-            record.stock_out=stock_out
-            record.buy_price=buy_price
-            record.sell_price=sell_price
-            raise Exception('Record updated')
-"""
+    def mutate(self, info, day, month, year, money_in, money_out):        
+        pass
